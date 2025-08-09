@@ -10,15 +10,24 @@ body{
     background-color: #ffffff;
 }
 
-.main-content{
+/* .main-content{
     min-height: 100vh;
     width: 1400px;
     margin: 2rem auto;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
+} */
+
+.main-content {
+    min-height: 100vh;
+    width: 100%;
+    max-width: 1400px;
+    margin: 2rem auto;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
 }
 
-.left-section{
+/* .left-section{
     grid-column: span 2;
     height: 100%;
     background-color: #d5d5d5;
@@ -73,9 +82,9 @@ body{
     letter-spacing: 1px;
     color: #000;
     padding-top: 1rem;
-}
+} */
 
-.contact-info ul{
+/* .contact-info ul{
     padding-top: 1rem;
 }
 
@@ -147,6 +156,134 @@ body{
 .sub-title{
     padding-top: 1rem;
     font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #718096;
+} */
+
+
+
+.left-section {
+    grid-column: span 2;
+    background-color: #d5d5d5;
+}
+
+.right-section {
+    grid-column: span 5;
+    background-color: #f7f7f7;
+}
+
+.left-content {
+    padding: 2rem 3rem;
+}
+
+.profile {
+    width: 100%;
+    border-bottom: 1px solid #002638;
+}
+
+.image {
+    width: 100%;
+    text-align: center;
+}
+
+.profile img {
+    width: 100%;
+    height: auto;
+    border: 8px solid #cdcdcd;
+    border-radius: 8px;
+}
+
+.name {
+    font-size: 2rem;
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 1.2rem 0;
+}
+
+.career {
+    font-size: 1rem;
+    color: #2F80ED;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+    font-weight: bold;
+}
+
+.main-title {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    padding-top: 1rem;
+}
+
+.contact-info ul {
+    padding-top: 1rem;
+}
+
+.contact-info ul li {
+    padding: .4rem 0;
+    display: flex;
+    align-items: center;
+    color: #718096;
+    font-size: 0.95rem;
+    word-break: break-word;
+}
+
+.contact-info ul li i {
+    padding-right: 1rem;
+    font-size: 1.2rem;
+    color: #2D9CDB;
+    width: 35px;
+}
+
+.skills-section ul {
+    padding-top: 1rem;
+}
+
+.skills-section ul li {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: .4rem 0;
+    align-items: center;
+}
+
+.progress-bar {
+    width: 100%;
+    height: .4rem;
+    background-color: #2f81ed5b;
+    position: relative;
+    border-radius: 12px;
+}
+
+.progress {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    background-color: #2D9CDB;
+    border-radius: 12px;
+}
+
+.js-progress { width: 70%; }
+.ps-progress { width: 90%; }
+.j-progress { width: 85%; }
+.c-progress { width: 40%; }
+.n-progress { width: 63%; }
+.w-progress { width: 78%; }
+
+.skill-title {
+    text-transform: uppercase;
+    color: #718096;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.sub-title {
+    padding-top: 1rem;
+    font-size: 1rem;
     text-transform: uppercase;
     color: #718096;
 }
@@ -374,6 +511,35 @@ body{
   }
 
   /* responsive tweaks */
+
+  @media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    .left-section, .right-section {
+        grid-column: span 1;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .left-content {
+        padding: 1.5rem;
+    }
+    .name {
+        font-size: 1.6rem;
+    }
+    .career {
+        font-size: 0.9rem;
+    }
+    .main-title {
+        font-size: 1.1rem;
+    }
+    .contact-info ul li {
+        font-size: 0.85rem;
+    }
+}
+
   @media (max-width:640px){
     .projects-showcase{ gap: 12px; padding: 12px; }
     .proj{ padding: 14px; border-radius: 12px; min-height: 110px; }
@@ -417,6 +583,26 @@ body{
         width: 60%;
     }
 }
+
+@media (max-width: 480px) {
+    .left-content, .right-main-content {
+        padding: 1rem;
+    }
+    .name {
+        font-size: 1.4rem;
+    }
+    .career {
+        font-size: 0.8rem;
+    }
+    .main-title {
+        font-size: 1rem;
+    }
+    .skills-section ul li {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+}
+
 @media screen and (max-width:390px){
     .name{
         font-size: 1.5rem;
