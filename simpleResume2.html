@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raheel Wali | Resume</title>
+  <style>
+    :root{
+      --ink: #000;
+      --paper: #fff;
+      --rule: rgba(0,0,0,.25);
+      --rule-strong: rgba(0,0,0,.85);
+      --max: 1200px;
+    }
+
+    *{ box-sizing: border-box; }
+    html,body{ height: 100%; }
+    body{
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.45;
+    }
+
+    a{
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      font-size: 15px;
+    }
+    a:hover{ opacity: .85; }
+    a:focus{ outline: 2px dashed var(--ink); outline-offset: 3px; }
+
+    .page{
+      max-width: var(--max);
+      margin: 28px auto;
+      padding: 0 18px 30px;
+    }
+
+    /* Header */
+    .top{
+      border: 2px solid var(--ink);
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .name{
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: .2px;
+      font-size: 34px;
+      line-height: 1.12;
+    }
+    .headline{
+      margin: 6px 0 0;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .9px;
+      font-size: 12px;
+    }
+
+    .top-right{
+      text-align: right;
+      min-width: 240px;
+    }
+
+    .download{
+      display: inline-block;
+      padding: 10px 12px;
+      border: 2px solid var(--ink);
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .meta{
+      margin: 10px 0 0;
+      font-size: 12px;
+    }
+
+    /* Layout */
+    .grid{
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 16px;
+    }
+
+    .card{
+      border: 2px solid var(--ink);
+      padding: 14px;
+    }
+
+    .h2{
+      margin: 0 0 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 15px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .label{
+      margin: 14px 0 8px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .9px;
+      font-size: 15px;
+    }
+
+    .contact{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .contact li{
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 13px;
+    }
+    .contact li:last-child{ border-bottom: 0; }
+    .k{
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      font-size: 14px;
+    }
+    .v{ word-break: break-word;font-size: 15px; }
+
+    .tags{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag{
+      border: 1.5px solid var(--ink);
+      padding: 6px 8px;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .two-col{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 10px;
+    }
+    .bullet{
+      margin: 0;
+      font-size: 15px;
+    }
+
+    /* Main content */
+    .p{
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .section{
+      padding-top: 14px;
+      border-top: 1px solid var(--rule-strong);
+      margin-top: 14px;
+    }
+
+    .item{
+      padding: 12px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .item:last-child{ border-bottom: 0; padding-bottom: 0; }
+
+    .row{
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+    .org{
+      margin: 0;
+      font-size: 20px;
+      font-weight: 900;
+    }
+    .when{
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .9px;
+      white-space: nowrap;
+    }
+    .role{
+      margin: 4px 0 8px;
+      font-size: 16px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+    .list{
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+    }
+    .list li{ margin: 6px 0; font-size: 18px;}
+    .mono{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 15px;
+    }
+
+    /* Print */
+    @page{
+      size: A4;
+      margin: 12mm;
+    }
+
+    @media print{
+      body{
+        margin: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .page{
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+      a{
+        border-bottom: 0;
+        text-decoration: underline;
+      }
+      .download{ display: none; }
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .top{ grid-template-columns: 1fr; }
+      .top-right{ text-align: left; min-width: 0; }
+      .grid{ grid-template-columns: 1fr; }
+      .two-col{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="top" aria-label="Resume Header">
+      <div>
+        <h1 class="name">Raheel Wali</h1>
+        <p class="headline">Full Stack Developer at AFCA</p>
+      </div>
+      <div class="top-right">
+        <a class="download" href="assets/RaheelResume-resumeUpdates8-8-2025.pdf" download>Download Resume (PDF)</a>
+        <p class="meta">
+          <span class="mono">Website:</span>
+          <a href="https://raheel2wali.github.io/resume" target="_blank" rel="noopener">raheel2wali.github.io/resume</a>
+        </p>
+      </div>
+    </header>
+
+    <section class="grid" aria-label="Resume Content">
+      <aside class="card" aria-label="Sidebar">
+        <h2 class="h2">Contact</h2>
+        <ul class="contact">
+          <li><span class="k">Phone</span><span class="v"><a href="tel:+18329458990">(832) 945-8990</a></span></li>
+          <li><span class="k">Email</span><span class="v"><a href="mailto:raheel2wali@gmail.com">raheel2wali@gmail.com</a></span></li>
+          <li><span class="k">Location</span><span class="v">Houston, TX</span></li>
+          <li><span class="k">Website</span><span class="v"><a href="https://raheel2wali.github.io/resume" target="_blank" rel="noopener">raheel2wali.github.io/resume</a></span></li>
+        </ul>
+
+        <h2 class="h2" style="margin-top:14px;">Skills</h2>
+
+        <p class="label">Frontend</p>
+        <ul class="tags">
+          <li class="tag">HTML/CSS</li>
+          <li class="tag">JavaScript</li>
+          <li class="tag">React</li>
+          <li class="tag">Remix</li>
+          <li class="tag">Next.js</li>
+        </ul>
+
+        <p class="label">Backend</p>
+        <ul class="tags">
+          <li class="tag">Node.js</li>
+          <li class="tag">Python</li>
+          <li class="tag">Django</li>
+        </ul>
+
+        <p class="label">Database</p>
+        <ul class="tags">
+          <li class="tag">MySQL</li>
+          <li class="tag">MongoDB</li>
+          <li class="tag">Firebase</li>
+        </ul>
+
+        <p class="label">Cloud / Servers</p>
+        <ul class="tags">
+          <li class="tag">AWS</li>
+          <li class="tag">DigitalOcean</li>
+          <li class="tag">Google Cloud</li>
+        </ul>
+
+        <p class="label">Utilities</p>
+        <ul class="tags">
+          <li class="tag">OpenAI API</li>
+          <li class="tag">Prompt Engineering</li>
+          <li class="tag">Docker</li>
+          <li class="tag">Twilio</li>
+          <li class="tag">Payment Gateways</li>
+        </ul>
+
+        <h2 class="h2" style="margin-top:14px;">Expertise</h2>
+        <div class="two-col" role="list">
+          <p class="bullet" role="listitem">• Manage Team</p>
+          <p class="bullet" role="listitem">• Development</p>
+          <p class="bullet" role="listitem">• Designing</p>
+          <p class="bullet" role="listitem">• Teaching</p>
+          <p class="bullet" role="listitem">• Leadership</p>
+          <p class="bullet" role="listitem">• Collaboration</p>
+        </div>
+      </aside>
+
+      <section class="card" aria-label="Main">
+        <h2 class="h2">Summary</h2>
+        <p class="p">
+          I’m Raheel Wali, a Full-Stack Developer with 8+ years of experience in building high-performance web applications.
+          Skilled in JavaScript frameworks, Node.js, Python, Django, and RESTful APIs, I’ve delivered AI-powered solutions using
+          the OpenAI API, real-time communication tools with Twilio, and optimized prompt engineering workflows. I also design
+          scalable architectures and manage cloud deployments on Google Cloud, DigitalOcean, and Heroku.
+        </p>
+
+        <div class="section" aria-label="Experience">
+          <h2 class="h2">Experience</h2>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">AFCA American Family Law</p>
+              <p class="when">2021 - 2025</p>
+            </div>
+            <p class="role">MERN Full-Stack Developer</p>
+            <ul class="list">
+              <li><strong>LAMS LAW Firm Software</strong> — <span class="mono">REMIX / REACT / PHP / MYSQL</span></li>
+              <li>Managed front-end and built interactive UI with functionality.</li>
+              <li>Connected APIs and deployed on Google Cloud using Docker containers; tested features per tasks.</li>
+              <li><strong>SignPenFree - Online e-Sign App</strong> — <span class="mono">REMIX / REACT / PHP / MYSQL</span></li>
+              <li>Owned front-end delivery, API integration, GCP Docker deployments, and task-based testing.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">Innovocrete (Pvt.) Ltd.</p>
+              <p class="when">2019 - 2021</p>
+            </div>
+            <p class="role">MERN Full-Stack Developer</p>
+            <ul class="list">
+              <li><strong>IBS - Accounting Base Software</strong> — <span class="mono">REACT / PYTHON / MYSQL</span></li>
+              <li>Built UI and integrated APIs; developed Django REST Framework APIs with MySQL; tested features per tasks.</li>
+              <li><strong>Logly</strong> — <span class="mono">MongoDB / Express / REACT / NODE</span></li>
+              <li>Managed front-end and backend APIs using Express with MongoDB.</li>
+              <li><strong>Trucker Hangout</strong> — <span class="mono">React / Laravel</span></li>
+              <li>Delivered UI and tested user flows with Cypress.js.</li>
+              <li><strong>Paytradies - Service Marketplace</strong> — <span class="mono">MongoDB / Express / REACT / NODE</span></li>
+              <li>Built UI, integrated APIs, deployed on DigitalOcean using Docker, and tested functionality per tasks.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">WebSol Experts</p>
+              <p class="when">Apr 2016 - Dec 2019</p>
+            </div>
+            <p class="role">Web Developer / Designer</p>
+            <ul class="list">
+              <li><strong>Pak College</strong> — <span class="mono">WordPress</span> (front-end &amp; back-end)</li>
+              <li><strong>5Plus Real Estate</strong> — <span class="mono">WordPress</span> (property management site)</li>
+              <li><strong>Expert Hoffmann</strong> — <span class="mono">PlantyMarket CMS</span> (ecommerce)</li>
+              <li><strong>AAUTOS</strong> — <span class="mono">HTML / CSS / JavaScript / PHP</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section" aria-label="Education and Certifications">
+          <h2 class="h2">Education &amp; Certifications</h2>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">Google AI Essentials</p>
+              <p class="when">2024</p>
+            </div>
+            <p class="p">Coursera</p>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">IBM Data Science Professional Certificate</p>
+              <p class="when">2021</p>
+            </div>
+            <p class="p">Coursera</p>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">Python Advance Certification</p>
+              <p class="when">2021</p>
+            </div>
+            <p class="p">Aptech Institute</p>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">ACCP Software Engineering Diploma</p>
+              <p class="when">2014 - 2017</p>
+            </div>
+            <p class="p">Aptech Institute</p>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">Intermediate</p>
+              <p class="when">2016</p>
+            </div>
+            <p class="p">Govt Premier Collage</p>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">Matriculation / O-Level</p>
+              <p class="when">2014</p>
+            </div>
+            <p class="p">SOS Hermann Gmeiner School</p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
+

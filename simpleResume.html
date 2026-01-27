@@ -1,0 +1,605 @@
+<!-- simpleResume.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raheel Wali | Resume</title>
+  <style>
+    :root{
+      --ink:#000;
+      --paper:#fff;
+      --muted:#333;
+      --thin:#777;
+      --line:#000;
+      --max: 980px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+    }
+
+    a{ color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); }
+    a:hover{ opacity: .8; }
+
+    .page{
+      max-width: var(--max);
+      margin: 36px auto;
+      padding: 0 18px 40px;
+    }
+
+    /* Header */
+    .header{
+      display:flex;
+      gap: 18px;
+      justify-content: space-between;
+      align-items: flex-start;
+      border: 2px solid var(--line);
+      padding: 18px;
+    }
+    .name{
+      margin:0;
+      font-size: 34px;
+      letter-spacing: .2px;
+      line-height: 1.15;
+    }
+    .title{
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+    .cta{
+      text-align:right;
+      min-width: 220px;
+    }
+    .cta .btn{
+      display:inline-block;
+      padding: 10px 12px;
+      border: 2px solid var(--line);
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .cta .btn:focus{ outline: 2px dashed var(--line); outline-offset: 3px; }
+    .cta small{
+      display:block;
+      margin-top: 10px;
+      color: var(--thin);
+      font-size: 12px;
+      line-height: 1.3;
+    }
+
+    /* Layout */
+    .grid{
+      display:grid;
+      grid-template-columns: 330px 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card{
+      border: 2px solid var(--line);
+      padding: 16px;
+    }
+
+    .section-title{
+      margin:0 0 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 6px;
+    }
+
+    .label{
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      margin: 14px 0 8px;
+    }
+
+    .list{
+      margin: 0;
+      padding-left: 18px;
+    }
+    .list li{ margin: 6px 0; }
+
+    .meta{
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .contact li{
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+      display:flex;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 13px;
+    }
+    .contact li:last-child{ border-bottom: 0; }
+    .contact span:first-child{
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      font-size: 11px;
+    }
+    .contact span:last-child{
+      text-align:right;
+      word-break: break-word;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style:none;
+    }
+    .tag{
+      border: 1.5px solid var(--line);
+      padding: 6px 8px;
+      font-size: 12px;
+      font-weight: 650;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .exp-item, .edu-item, .proj-item{
+      padding: 12px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .exp-item:last-child,
+    .edu-item:last-child,
+    .proj-item:last-child{ border-bottom: 0; padding-bottom: 0; }
+
+    .row{
+      display:flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .h3{
+      margin:0;
+      font-size: 15px;
+      font-weight: 900;
+    }
+    .when{
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      white-space: nowrap;
+    }
+    .role{
+      margin: 4px 0 8px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+    .sub{
+      margin: 6px 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .small{
+      font-size: 13px;
+      margin: 0;
+    }
+    .mono{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+    }
+
+    /* Footer */
+    .footer{
+      margin-top: 18px;
+      border: 2px solid var(--line);
+      padding: 12px 16px;
+      display:flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Print */
+    @media print{
+      .page{ margin: 0; padding: 0; max-width: none; }
+      .header, .card, .footer{ border-width: 1.5px; }
+      a{ border-bottom: 0; text-decoration: underline; }
+      .cta .btn{ display:none; }
+      body{ -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    /* Responsive */
+    @media (max-width: 920px){
+      .grid{ grid-template-columns: 1fr; }
+      .cta{ text-align:left; min-width: 0; }
+      .header{ flex-direction: column; }
+      .two-col{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <!-- Header -->
+    <header class="header" aria-label="Resume Header">
+      <div>
+        <h1 class="name">Raheel Wali</h1>
+        <p class="title">Full Stack Developer at AFCA</p>
+        <p class="meta">
+          <span class="mono">Portfolio:</span>
+          <a href="https://raheel2wali.github.io/resume" target="_blank" rel="noopener">https://raheel2wali.github.io/resume</a>
+        </p>
+      </div>
+
+      <div class="cta">
+        <!-- Replace href with your actual PDF file path when you have it -->
+        <a class="btn" href="#" onclick="window.print(); return false;">Download Resume (PDF)</a>
+        <small>Tip: This button prints to PDF using your browser’s “Save as PDF”.</small>
+      </div>
+    </header>
+
+    <section class="grid" aria-label="Resume Content">
+      <!-- Left Column -->
+      <aside class="card" aria-label="Sidebar">
+        <h2 class="section-title">Contact Info</h2>
+        <ul class="contact">
+          <li><span>Phone</span><span>(832) 945-8990</span></li>
+          <li><span>Email</span><span><a href="mailto:raheel2wali@gmail.com">raheel2wali@gmail.com</a></span></li>
+          <li><span>Location</span><span>Houston, TX</span></li>
+          <li><span>Website</span><span><a href="https://raheel2wali.github.io/resume" target="_blank" rel="noopener">raheel2wali.github.io/resume</a></span></li>
+        </ul>
+
+        <h2 class="section-title" style="margin-top:16px;">Skills</h2>
+
+        <p class="label">Frontend</p>
+        <ul class="tags">
+          <li class="tag">HTML/CSS</li>
+          <li class="tag">JavaScript</li>
+          <li class="tag">React</li>
+          <li class="tag">Remix</li>
+          <li class="tag">Next.js</li>
+        </ul>
+
+        <p class="label">Backend</p>
+        <ul class="tags">
+          <li class="tag">Node.js</li>
+          <li class="tag">Python</li>
+          <li class="tag">Django</li>
+        </ul>
+
+        <p class="label">Database</p>
+        <ul class="tags">
+          <li class="tag">MySQL</li>
+          <li class="tag">MongoDB</li>
+          <li class="tag">Firebase</li>
+        </ul>
+
+        <p class="label">Cloud Servers</p>
+        <ul class="tags">
+          <li class="tag">AWS</li>
+          <li class="tag">DigitalOcean</li>
+          <li class="tag">Google Cloud</li>
+        </ul>
+
+        <p class="label">Utilities</p>
+        <ul class="tags">
+          <li class="tag">OpenAI API</li>
+          <li class="tag">Prompt Engineering</li>
+          <li class="tag">Docker</li>
+          <li class="tag">Twilio</li>
+          <li class="tag">Payment Gateways</li>
+        </ul>
+
+        <h2 class="section-title" style="margin-top:16px;">Expertise</h2>
+        <div class="two-col" role="list">
+          <p class="small" role="listitem">• Manage Team</p>
+          <p class="small" role="listitem">• Development</p>
+          <p class="small" role="listitem">• Designing</p>
+          <p class="small" role="listitem">• Teaching</p>
+          <p class="small" role="listitem">• Leadership</p>
+          <p class="small" role="listitem">• Collaboration</p>
+        </div>
+      </aside>
+
+      <!-- Right Column -->
+      <section class="card" aria-label="Main">
+        <h2 class="section-title">About Me</h2>
+        <p class="small">
+          I’m Raheel Wali, a Full-Stack Developer with 8+ years of experience in building high-performance web applications.
+          Skilled in JavaScript frameworks, Node.js, Python, Django, and RESTful APIs, I’ve delivered AI-powered solutions using
+          the OpenAI API, real-time communication tools with Twilio, and optimized prompt engineering workflows. I also design
+          scalable architectures and manage cloud deployments on Google Cloud, DigitalOcean, and Heroku.
+        </p>
+
+        <h2 class="section-title" style="margin-top:16px;">Projects Showcase</h2>
+        <p class="small" style="margin-bottom:10px;">
+          Some URLs may be inactive or restricted.
+        </p>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">Eilmi Education Website</p>
+            <p class="when mono">REACT / REMIX / FIREBASE</p>
+          </div>
+          <p class="sub"><a href="https://eilmi.com" target="_blank" rel="noopener">eilmi.com</a></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">Convo AI</p>
+            <p class="when mono">REACT / REMIX / NODEJS / PYTHON / FIREBASE</p>
+          </div>
+          <p class="sub"><a href="https://convoai.ai4biz.app" target="_blank" rel="noopener">convoai.ai4biz.app</a></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">Game Sport</p>
+            <p class="when mono">REACT / REMIX / FIREBASE</p>
+          </div>
+          <p class="sub"><a href="https://gameoutfitters.net" target="_blank" rel="noopener">gameoutfitters.net</a></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">Tax Return AI</p>
+            <p class="when mono">REACT / REMIX / NODEJS / PYTHON / FIREBASE</p>
+          </div>
+          <p class="sub"><a href="https://taxreturn.ai4biz.app" target="_blank" rel="noopener">taxreturn.ai4biz.app</a></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">Sunah Hijama | Therapy</p>
+            <p class="when mono">REACT / FIREBASE</p>
+          </div>
+          <p class="sub"><a href="https://sunnahijama.com" target="_blank" rel="noopener">sunnahijama.com</a></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">Realtor</p>
+            <p class="when mono">REMIX / PYTHON / MYSQL</p>
+          </div>
+          <p class="sub"><a href="https://realtor.ai4biz.app" target="_blank" rel="noopener">realtor.ai4biz.app</a></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">AAUTOS - Auto Decor Website</p>
+            <p class="when mono">HTML / CSS / JAVASCRIPT / PHP</p>
+          </div>
+          <p class="sub"><a href="https://aautosdecore.com" target="_blank" rel="noopener">aautosdecore.com</a></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">LAMS LAW Firm Software</p>
+            <p class="when mono">REMIX / REACT / PHP / MYSQL / DOCKER / PYTHON</p>
+          </div>
+          <p class="sub"><span class="mono">Restricted*</span></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">SignPenFree - Online e-Sign App</p>
+            <p class="when mono">REMIX / REACT / PHP / MYSQL / DOCKER / PYTHON</p>
+          </div>
+          <p class="sub"><span class="mono">Restricted*</span></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">IBS - Accounting Base Software</p>
+            <p class="when mono">REACT / PYTHON / MYSQL</p>
+          </div>
+          <p class="sub"><span class="mono">Restricted*</span></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">Logly - Pet Owners, Businesses &amp; Non-Profits</p>
+            <p class="when mono">MONGODB / EXPRESS / REACT / NODE</p>
+          </div>
+          <p class="sub"><span class="mono">Restricted*</span></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">Trucker Hangout</p>
+            <p class="when mono">REACT / LARAVEL</p>
+          </div>
+          <p class="sub"><span class="mono">Restricted*</span></p>
+        </div>
+
+        <div class="proj-item">
+          <div class="row">
+            <p class="h3">Paytradies - Service Marketplace</p>
+            <p class="when mono">MONGODB / EXPRESS / REACT / NODE</p>
+          </div>
+          <p class="sub"><span class="mono">Restricted*</span></p>
+        </div>
+
+        <h2 class="section-title" style="margin-top:16px;">Experience</h2>
+
+        <div class="exp-item">
+          <div class="row">
+            <p class="h3">AFCA American Family Law</p>
+            <p class="when">2021 - 2025</p>
+          </div>
+          <p class="role">MERN Full-Stack Developer</p>
+
+          <p class="small"><strong>Project:</strong> LAMS LAW Firm Software</p>
+          <p class="sub"><strong>Tech:</strong> REMIX / REACT / PHP / MYSQL</p>
+          <ul class="list">
+            <li>Managed front-end and built interactive UI components.</li>
+            <li>Integrated APIs and deployed on Google Cloud (GCP) using Docker containers.</li>
+            <li>Performed functional testing based on assigned tasks.</li>
+          </ul>
+
+          <p class="small" style="margin-top:10px;"><strong>Project:</strong> SignPenFree - Online e-Sign App</p>
+          <p class="sub"><strong>Tech:</strong> REMIX / REACT / PHP / MYSQL</p>
+          <ul class="list">
+            <li>Owned front-end development and delivered functional, responsive UI flows.</li>
+            <li>Connected APIs and supported deployments on GCP via Docker.</li>
+            <li>Validated features through task-based testing.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="row">
+            <p class="h3">Innovocrete (Pvt.) Ltd.</p>
+            <p class="when">2019 - 2021</p>
+          </div>
+          <p class="role">MERN Full-Stack Developer</p>
+
+          <p class="small"><strong>Project:</strong> IBS - Accounting Base Software</p>
+          <p class="sub"><strong>Tech:</strong> REACT / PYTHON / MYSQL</p>
+          <ul class="list">
+            <li>Built interactive UI and integrated API workflows.</li>
+            <li>Developed Django REST Framework APIs and used MySQL for persistence.</li>
+            <li>Tested functionality according to task requirements.</li>
+          </ul>
+
+          <p class="small" style="margin-top:10px;"><strong>Project:</strong> Logly - Pet Owners, Businesses &amp; Non-Profits</p>
+          <p class="sub"><strong>Tech:</strong> MongoDB / Express / REACT / NODE</p>
+          <ul class="list">
+            <li>Developed front-end and backend APIs with Express.</li>
+            <li>Designed data flows using MongoDB.</li>
+          </ul>
+
+          <p class="small" style="margin-top:10px;"><strong>Project:</strong> Trucker Hangout</p>
+          <p class="sub"><strong>Tech:</strong> React / Laravel</p>
+          <ul class="list">
+            <li>Managed front-end UI delivery and ensured feature completeness.</li>
+            <li>Tested user flows using Cypress.js.</li>
+          </ul>
+
+          <p class="small" style="margin-top:10px;"><strong>Project:</strong> Paytradies - Service Marketplace</p>
+          <p class="sub"><strong>Tech:</strong> MongoDB / Express / REACT / NODE</p>
+          <ul class="list">
+            <li>Built and maintained interactive UI with API integrations.</li>
+            <li>Deployed on DigitalOcean using Docker containers.</li>
+            <li>Completed testing per task requirements.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="row">
+            <p class="h3">WebSol Experts</p>
+            <p class="when">Apr 2016 - Dec 2019</p>
+          </div>
+          <p class="role">Web Developer / Designer</p>
+
+          <p class="small"><strong>Project:</strong> Pak College - Learning Website</p>
+          <p class="sub"><strong>Tech:</strong> WordPress</p>
+          <ul class="list">
+            <li>Managed front-end and backend development on WordPress.</li>
+          </ul>
+
+          <p class="small" style="margin-top:10px;"><strong>Project:</strong> 5Plus Real Estate - Property Management</p>
+          <p class="sub"><strong>Tech:</strong> WordPress</p>
+          <ul class="list">
+            <li>Built and maintained WordPress-based site features and content structure.</li>
+          </ul>
+
+          <p class="small" style="margin-top:10px;"><strong>Project:</strong> Expert Hoffmann - Ecommerce</p>
+          <p class="sub"><strong>Tech:</strong> PlantyMarket CMS</p>
+          <ul class="list">
+            <li>Managed front-end and backend using PlantyMarket CMS.</li>
+          </ul>
+
+          <p class="small" style="margin-top:10px;"><strong>Project:</strong> AAUTOS - Auto Decor Website</p>
+          <p class="sub"><strong>Tech:</strong> HTML / CSS / JavaScript / PHP</p>
+          <ul class="list">
+            <li>Developed website UI and interactive behavior for the storefront experience.</li>
+          </ul>
+        </div>
+
+        <h2 class="section-title" style="margin-top:16px;">Education &amp; Certifications</h2>
+
+        <div class="edu-item">
+          <div class="row">
+            <p class="h3">Google AI Essentials</p>
+            <p class="when">2024</p>
+          </div>
+          <p class="sub">Coursera</p>
+        </div>
+
+        <div class="edu-item">
+          <div class="row">
+            <p class="h3">IBM Data Science Professional Certificate</p>
+            <p class="when">2021</p>
+          </div>
+          <p class="sub">Coursera</p>
+        </div>
+
+        <div class="edu-item">
+          <div class="row">
+            <p class="h3">Python Advance Certification</p>
+            <p class="when">2021</p>
+          </div>
+          <p class="sub">Aptech Institute</p>
+        </div>
+
+        <div class="edu-item">
+          <div class="row">
+            <p class="h3">ACCP Software Engineering Diploma</p>
+            <p class="when">2014 - 2017</p>
+          </div>
+          <p class="sub">Aptech Institute</p>
+        </div>
+
+        <div class="edu-item">
+          <div class="row">
+            <p class="h3">Intermediate</p>
+            <p class="when">2016</p>
+          </div>
+          <p class="sub">Govt Premier Collage</p>
+        </div>
+
+        <div class="edu-item">
+          <div class="row">
+            <p class="h3">Matriculation / O-Level</p>
+            <p class="when">2014</p>
+          </div>
+          <p class="sub">SOS Hermann Gmeiner School</p>
+        </div>
+      </section>
+    </section>
+
+    <footer class="footer" aria-label="Footer">
+      <div><strong>Raheel Wali</strong> — Full Stack Developer</div>
+      <div class="mono">Last updated: Jan 27, 2026</div>
+    </footer>
+  </main>
+</body>
+</html>
