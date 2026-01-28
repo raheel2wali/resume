@@ -159,7 +159,7 @@
       font-size: 12px;
       text-transform: uppercase;
       letter-spacing: .14em;
-      color: var(--text-soft);
+      /* color: var(--text-soft); */
       border: 1px solid transparent;
       cursor: pointer;
       transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), transform 120ms ease-out;
@@ -301,16 +301,23 @@
       text-transform: uppercase;
       color: var(--text-soft);
     }
+    body.theme-light .hero-badge{
+      background:rgba(255, 255, 255, 0.95)
+    }
     .hero-title{
       margin: 0 0 .4rem;
       font-size: clamp(2.4rem, 4vw, 3.1rem);
       letter-spacing: -.03em;
-      font-weight: 800;
+      /* font-weight: 800; */
     }
     .hero-title span{
       background: linear-gradient(135deg, #e5e7eb, #f9fafb);
       -webkit-background-clip: text;
       color: transparent;
+    }
+
+    body.theme-light .hero-title span{
+      color: #209ce5;
     }
     .hero-sub{
       margin: 0 0 1.35rem;
@@ -330,7 +337,7 @@
       border-radius: 999px;
       padding: .25rem .7rem;
       border: 1px solid rgba(148,163,184,0.5);
-      background: rgba(15,23,42,0.9);
+      /* background: rgba(15,23,42,0.9); */
       letter-spacing: .13em;
       color: var(--text-soft);
     }
@@ -353,6 +360,11 @@
       cursor: pointer;
       transition: transform var(--transition-med), box-shadow var(--transition-med), background var(--transition-fast), border-color var(--transition-fast);
     }
+
+    body.theme-light .btn{
+      background: rgba(255, 255, 255, 0.95);
+     }
+
     .btn span.icon{
       width: 18px; height: 18px;
       border-radius: 999px;
@@ -602,6 +614,10 @@
       background: rgba(15,23,42,.9);
       border: 1px solid rgba(55,65,81,.9);
       color: var(--text);
+    }
+
+    body.theme-light .skill-tag {
+      background: #f9fafb;
     }
 
     /* EXPERIENCE */
