@@ -1,0 +1,277 @@
+<!-- simpleResume.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raheel Wali | Resume</title>
+  <style>
+    :root{
+      --ink:#000;
+      --paper:#fff;
+      --muted:#333;
+      --thin:#777;
+      --line:#000;
+      --max: 980px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.5;
+    }
+
+    a{ color: var(--ink); text-decoration: none; border-bottom: 1px solid var(--ink); }
+    a:hover{ opacity: .8; }
+
+    .page{
+      max-width: var(--max);
+      margin: 36px auto;
+      padding: 0 18px 40px;
+    }
+
+    .header{
+      display:flex;
+      gap: 18px;
+      justify-content: space-between;
+      align-items: flex-start;
+      border: 2px solid var(--line);
+      padding: 18px;
+    }
+    .name{
+      margin:0;
+      font-size: 34px;
+      line-height: 1.15;
+    }
+    .title{
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+    .cta{
+      text-align:right;
+      min-width: 220px;
+    }
+    .cta .btn{
+      display:inline-block;
+      padding: 10px 12px;
+      border: 2px solid var(--line);
+      font-weight: 700;
+    }
+    .cta small{
+      display:block;
+      margin-top: 10px;
+      color: var(--thin);
+      font-size: 12px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 330px 1fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card{
+      border: 2px solid var(--line);
+      padding: 16px;
+    }
+
+    .section-title{
+      margin:0 0 10px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 6px;
+    }
+
+    .label{
+      font-weight: 800;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin: 14px 0 8px;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style:none;
+    }
+    .tag{
+      border: 1.5px solid var(--line);
+      padding: 6px 8px;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .two-col{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .row{
+      display:flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .h3{
+      margin:0;
+      font-size: 15px;
+      font-weight: 900;
+    }
+    .when{
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .role{
+      margin: 4px 0 8px;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .small{ font-size: 13px; }
+    .sub{ font-size: 13px; color: var(--muted); }
+    .list{ padding-left: 18px; }
+    .list li{ margin: 6px 0; }
+
+    @media (max-width: 920px){
+      .grid{ grid-template-columns: 1fr; }
+      .header{ flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+<main class="page">
+
+<header class="header">
+  <div>
+    <h1 class="name">Raheel Wali</h1>
+    <p class="title">Full Stack Developer at AFCA</p>
+    <p class="small">
+      Portfolio:
+      <a href="https://raheel2wali.github.io/resume" target="_blank">
+        raheel2wali.github.io/resume
+      </a>
+    </p>
+  </div>
+  <div class="cta">
+    <a class="btn" href="#" onclick="window.print()">Download Resume (PDF)</a>
+    <small>Save as PDF using browser print</small>
+  </div>
+</header>
+
+<section class="grid">
+
+<!-- LEFT -->
+<aside class="card">
+  <h2 class="section-title">Skills</h2>
+
+  <p class="label">Frontend</p>
+  <ul class="tags">
+    <li class="tag">HTML/CSS</li>
+    <li class="tag">JavaScript</li>
+    <li class="tag">React</li>
+    <li class="tag">Remix</li>
+    <li class="tag">Next.js</li>
+  </ul>
+
+  <p class="label">Backend</p>
+  <ul class="tags">
+    <li class="tag">Node.js</li>
+    <li class="tag">Python</li>
+    <li class="tag">Django</li>
+  </ul>
+
+  <p class="label">Database</p>
+  <ul class="tags">
+    <li class="tag">MySQL</li>
+    <li class="tag">MongoDB</li>
+    <li class="tag">Firebase</li>
+  </ul>
+
+  <p class="label">CMS / Ecommerce</p>
+  <ul class="tags">
+    <li class="tag">WordPress</li>
+    <li class="tag">WooCommerce</li>
+  </ul>
+
+  <p class="label">Cloud & Utilities</p>
+  <ul class="tags">
+    <li class="tag">AWS</li>
+    <li class="tag">Google Cloud</li>
+    <li class="tag">DigitalOcean</li>
+    <li class="tag">Docker</li>
+    <li class="tag">OpenAI API</li>
+    <li class="tag">Twilio</li>
+    <li class="tag">Payment Gateways</li>
+  </ul>
+</aside>
+
+<!-- RIGHT -->
+<section class="card">
+
+<h2 class="section-title">About Me</h2>
+<p class="small">
+  Full-Stack Developer with 8+ years of experience building scalable web applications.
+  Strong expertise in React, Remix, Node.js, Python, Django, REST APIs, and cloud deployments.
+  Hands-on experience with WordPress and WooCommerce, including theme customization,
+  plugin integration, ecommerce setup, and performance optimization.
+</p>
+
+<h2 class="section-title">Experience</h2>
+
+<div>
+  <div class="row">
+    <p class="h3">WebSol Experts</p>
+    <p class="when">2016 – 2019</p>
+  </div>
+  <p class="role">Web Developer / Designer</p>
+
+  <p class="small"><strong>Pak College – Learning Platform</strong></p>
+  <p class="sub">WordPress</p>
+  <ul class="list">
+    <li>Developed and maintained WordPress-based educational website.</li>
+    <li>Customized themes, plugins, and improved site performance.</li>
+  </ul>
+
+  <p class="small"><strong>5Plus Real Estate</strong></p>
+  <p class="sub">WordPress</p>
+  <ul class="list">
+    <li>Built and managed WordPress real estate listings and forms.</li>
+    <li>Optimized site speed and content structure.</li>
+  </ul>
+
+  <p class="small"><strong>WooCommerce Store</strong></p>
+  <p class="sub">WordPress / WooCommerce</p>
+  <ul class="list">
+    <li>Built and customized WooCommerce storefront.</li>
+    <li>Configured products, checkout, shipping, taxes, and payment gateways.</li>
+    <li>Improved checkout UX and site performance.</li>
+  </ul>
+</div>
+
+</section>
+</section>
+
+<footer class="card" style="margin-top:18px;">
+  <strong>Raheel Wali</strong> — Full Stack Developer
+</footer>
+
+</main>
+</body>
+</html>
