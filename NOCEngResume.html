@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Raheel Wali | NOC Engineer Resume</title>
+  <style>
+    :root {
+      --ink: #000;
+      --paper: #fff;
+      --rule: rgba(0, 0, 0, .25);
+      --rule-strong: rgba(0, 0, 0, .85);
+      --max: 1200px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      line-height: 1.45;
+    }
+
+    a {
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid currentColor;
+      font-size: 15px;
+    }
+
+    a:hover {
+      opacity: .85;
+    }
+
+    a:focus {
+      outline: 2px dashed var(--ink);
+      outline-offset: 3px;
+    }
+
+    .page {
+      max-width: var(--max);
+      margin: 28px auto;
+      padding: 0 18px 30px;
+    }
+
+    /* Header */
+    .top {
+      border: 2px solid var(--ink);
+      padding: 16px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 14px;
+      align-items: start;
+    }
+
+    .name {
+      margin: 0;
+      font-weight: 900;
+      letter-spacing: .2px;
+      font-size: 34px;
+      line-height: 1.12;
+    }
+
+    .headline {
+      margin: 6px 0 0;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .9px;
+      font-size: 12px;
+    }
+
+    .top-right {
+      text-align: right;
+      min-width: 240px;
+    }
+
+    .download {
+      display: inline-block;
+      padding: 10px 12px;
+      border: 2px solid var(--ink);
+      font-weight: 800;
+      letter-spacing: .2px;
+    }
+
+    .meta {
+      margin: 10px 0 0;
+      font-size: 12px;
+    }
+
+    /* Layout */
+    .grid {
+      margin-top: 16px;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 16px;
+    }
+
+    .card {
+      border: 2px solid var(--ink);
+      padding: 14px;
+    }
+
+    .h2 {
+      margin: 0 0 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 15px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--ink);
+    }
+
+    .label {
+      margin: 14px 0 8px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .9px;
+      font-size: 15px;
+    }
+
+    .contact {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact li {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--rule);
+      font-size: 13px;
+    }
+
+    .contact li:last-child {
+      border-bottom: 0;
+    }
+
+    .k {
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .7px;
+      font-size: 14px;
+    }
+
+    .v {
+      word-break: break-word;
+      font-size: 15px;
+    }
+
+    .tags {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      border: 1.5px solid var(--ink);
+      padding: 6px 8px;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 10px;
+    }
+
+    .bullet {
+      margin: 0;
+      font-size: 15px;
+    }
+
+    /* Main content */
+    .p {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .section {
+      padding-top: 14px;
+      border-top: 1px solid var(--rule-strong);
+      margin-top: 14px;
+    }
+
+    .item {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .item:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: baseline;
+    }
+
+    .org {
+      margin: 0;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .when {
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .9px;
+      white-space: nowrap;
+    }
+
+    .role {
+      margin: 4px 0 8px;
+      font-size: 16px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+    }
+
+    .list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 13px;
+    }
+
+    .list li {
+      margin: 6px 0;
+      font-size: 18px;
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 15px;
+    }
+
+    /* Print */
+    @page {
+      size: A4;
+      margin: 12mm;
+    }
+
+    @media print {
+      body {
+        margin: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        margin: 0;
+        padding: 0;
+        max-width: none;
+      }
+
+      a {
+        border-bottom: 0;
+        text-decoration: underline;
+      }
+
+      .download {
+        display: none;
+      }
+    }
+
+    /* Responsive */
+    @media (max-width: 920px) {
+      .top {
+        grid-template-columns: 1fr;
+      }
+
+      .top-right {
+        text-align: left;
+        min-width: 0;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <header class="top" aria-label="Resume Header">
+      <div>
+        <h1 class="name">Raheel Wali</h1>
+        <p class="headline">NOC Engineer at AFCA</p>
+      </div>
+
+    </header>
+
+    <section class="grid" aria-label="Resume Content">
+      <aside class="card" aria-label="Sidebar">
+        <h2 class="h2">Contact</h2>
+        <ul class="contact">
+          <li><span class="k">Phone</span><span class="v"><a href="tel:+18329458990">(832) 945-8990</a></span></li>
+          <li><span class="k">Email</span><span class="v"><a
+                href="mailto:raheel2wali@gmail.com">raheel2wali@gmail.com</a></span></li>
+          <li><span class="k">Location</span><span class="v">Houston, TX</span></li>
+          <li><span class="k">Website</span><span class="v"><a href="https://raheel2wali.github.io/resume"
+                target="_blank" rel="noopener">raheel2wali.github.io/resume</a></span></li>
+        </ul>
+
+        <h2 class="h2" style="margin-top:14px;">Skills</h2>
+
+        <p class="label">Network Monitoring</p>
+        <ul class="tags">
+          <li class="tag">SolarWinds</li>
+          <li class="tag">Nagios</li>
+          <li class="tag">PRTG</li>
+          <li class="tag">Wireshark</li>
+          <li class="tag">Zabbix</li>
+        </ul>
+
+        <p class="label">Networking</p>
+        <ul class="tags">
+          <li class="tag">TCP/IP</li>
+          <li class="tag">Routing (BGP, OSPF)</li>
+          <li class="tag">Switching (VLAN, STP)</li>
+          <li class="tag">Firewalls (ASA, Palo Alto)</li>
+          <li class="tag">VPN (IPSec, SSL)</li>
+        </ul>
+
+        <p class="label">Systems & Tools</p>
+        <ul class="tags">
+          <li class="tag">Cisco IOS</li>
+          <li class="tag">Linux/Unix</li>
+          <li class="tag">Windows Server</li>
+          <li class="tag">ServiceNow</li>
+          <li class="tag">Jira</li>
+        </ul>
+
+        <p class="label">Expertise</p>
+        <div class="two-col" role="list">
+          <p class="bullet" role="listitem">• Incident Mgmt</p>
+          <p class="bullet" role="listitem">• Troubleshooting</p>
+          <p class="bullet" role="listitem">• Root Cause Analysis</p>
+          <p class="bullet" role="listitem">• Escalation Handling</p>
+          <p class="bullet" role="listitem">• SLA Compliance</p>
+          <p class="bullet" role="listitem">• Team Leadership</p>
+        </div>
+      </aside>
+
+      <section class="card" aria-label="Main">
+        <h2 class="h2">Professional Summary</h2>
+        <p class="p">
+          Results-driven NOC Engineer with over 5 years of professional experience managing complex network
+          infrastructures.
+          Expert in real-time monitoring, detailed troubleshooting, and rapid incident resolution for mission-critical
+          systems.
+          Proven ability to maintain 99.9% network uptime and optimize operational workflows in high-pressure enterprise
+          environments.
+        </p>
+
+        <div class="section" aria-label="Experience">
+          <h2 class="h2">Experience</h2>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">AFCA American Family Law</p>
+              <p class="when">2021 - Present</p>
+            </div>
+            <p class="role">NOC Engineer / Network Operations Analyst</p>
+
+            <ul class="list">
+              <li>Manage 24/7 real-time monitoring of enterprise network infrastructure (LAN/WAN, VPN, and Servers) for
+                global operations.</li>
+              <li>Lead Level 1 and Level 2 incident response, utilizing <strong>SolarWinds</strong> and
+                <strong>Nagios</strong> for rapid threat detection and performance analysis.</li>
+              <li>Successfully resolved over 500+ critical network tickets, maintaining a 98% SLA compliance rate across
+                the technical organization.</li>
+              <li>Documented and executed standard operating procedures (SOPs) for fault detection and escalation to
+                Tier 3 engineering teams.</li>
+              <li>Utilized <strong>ServiceNow</strong> for incident tracking, lifecycle management, and detailed
+                post-mortem reporting.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">Innovocrete (Pvt.) Ltd.</p>
+              <p class="when">2019 - 2021</p>
+            </div>
+            <p class="role">Junior Network Specialist</p>
+            <ul class="list">
+              <li>Assisted in the configuration and deployment of Cisco routers and switches across multiple branch
+                offices.</li>
+              <li>Maintained network security through VLAN segmentation, port security, and firewall rule auditing.</li>
+              <li>Performed hands-on hardware troubleshooting, including cabling (Cat6, Fiber Optic) and equipment
+                testing.</li>
+              <li>Collaborated with senior engineers to implement OSPF and BGP routing protocols for optimized data
+                flows.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="section" aria-label="Education and Certifications">
+          <h2 class="h2">Education &amp; Certifications</h2>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">CCNA (Cisco Certified Network Associate)</p>
+              <p class="when">2022</p>
+            </div>
+            <p class="p">Cisco Systems</p>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">Google AI Essentials</p>
+              <p class="when">2024</p>
+            </div>
+            <p class="p">Coursera</p>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">ACCP Software Engineering Diploma</p>
+              <p class="when">2014 - 2017</p>
+            </div>
+            <p class="p">Aptech Institute</p>
+          </div>
+
+          <div class="item">
+            <div class="row">
+              <p class="org">Govt Premier Collage (Intermediate)</p>
+              <p class="when">2016</p>
+            </div>
+            <p class="p">Education Board</p>
+          </div>
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+
+</html>
